@@ -1,0 +1,44 @@
+:root {
+  color-scheme: light;
+  --color-background: 0 0% 100%;
+  --color-foreground: 222 47% 11%;
+  --color-muted: 210 40% 96%;
+  --color-muted-foreground: 215 16% 46%;
+  --color-border: 214 32% 91%;
+  --color-input: 210 40% 96%;
+  --color-ring: 215 20% 65%;
+  --color-primary: 222 47% 11%;
+  --color-primary-foreground: 210 40% 98%;
+  --color-secondary: 210 40% 96%;
+  --color-secondary-foreground: 222 47% 11%;
+  --color-accent: 210 100% 80%;
+  --color-accent-foreground: 222 47% 11%;
+
+  --radius-lg: 1.25rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+}
+
+.dark {
+  color-scheme: dark;
+  --color-background: 222 47% 11%;
+  --color-foreground: 210 40% 98%;
+  --color-muted: 217 33% 16%;
+  --color-muted-foreground: 215 20% 65%;
+  --color-border: 217 33% 18%;
+  --color-input: 217 33% 16%;
+  --color-ring: 212 100% 68%;
+  --color-primary: 210 100% 80%;
+  --color-primary-foreground: 222 47% 11%;
+  --color-secondary: 217 33% 16%;
+  --color-secondary-foreground: 210 40% 98%;
+  --color-accent: 154 59% 51%;
+  --color-accent-foreground: 210 40% 98%;
+}
+
+/* Antikythera theme placeholder tokens */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
