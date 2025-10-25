@@ -1,5 +1,6 @@
 'use client';
 
+import Typography from '../../../components/typography';
 import type { Breadcrumb, Conversation } from '../types';
 import styles from './ChatSidebar.module.css';
 
@@ -13,14 +14,14 @@ type ChatSidebarProps = {
 
 const renderBreadcrumbs = (breadcrumbs: Breadcrumb[]) => {
   return breadcrumbs.map((crumb, index) => (
-    <span key={crumb.id}>
+    <Typography.Caption as="span" key={crumb.id} tone="subtle" noMargin>
       {crumb.label}
       {index < breadcrumbs.length - 1 ? (
         <span aria-hidden="true" className={styles.breadcrumbSeparator}>
           /
         </span>
       ) : null}
-    </span>
+    </Typography.Caption>
   ));
 };
 
@@ -44,7 +45,9 @@ const ChatSidebar = ({
           {renderBreadcrumbs(breadcrumbs)}
         </nav>
         <div className={styles.headerRow}>
-          <h2 className={styles.title}>Conversations</h2>
+          <Typography.H2 className={styles.title} noMargin>
+            Conversations
+          </Typography.H2>
         </div>
       </div>
 
@@ -66,16 +69,34 @@ const ChatSidebar = ({
                   }
                 }}
               >
-                <span className={styles.itemTitle}>
+                <Typography.Body
+                  as="span"
+                  weight="strong"
+                  noMargin
+                  className={styles.itemTitle}
+                >
                   {conversation.title}
                   {conversation.unreadCount ? (
                     <span className={styles.badge}>{conversation.unreadCount}</span>
                   ) : null}
-                </span>
-                <span className={styles.itemPreview}>{conversation.preview}</span>
-                <span className={styles.meta}>
+                </Typography.Body>
+                <Typography.Body
+                  as="span"
+                  size="small"
+                  tone="muted"
+                  noMargin
+                  className={styles.itemPreview}
+                >
+                  {conversation.preview}
+                </Typography.Body>
+                <Typography.Caption
+                  as="span"
+                  tone="subtle"
+                  noMargin
+                  className={styles.meta}
+                >
                   {conversation.participants.join(', ')}
-                </span>
+                </Typography.Caption>
               </button>
             </li>
           );

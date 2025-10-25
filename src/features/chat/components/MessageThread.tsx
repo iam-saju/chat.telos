@@ -1,3 +1,4 @@
+import Typography from '../../../components/typography';
 import type { ChatMessage } from '../types';
 import styles from './MessageThread.module.css';
 
@@ -70,17 +71,41 @@ const MessageThread = ({ messages }: MessageThreadProps) => {
             aria-label={`Message from ${message.author} at ${timestamp}`}
           >
             <header className={styles.header}>
-              <span className={styles.author}>{message.author}</span>
-              <time className={styles.timestamp} dateTime={message.timestamp}>
+              <Typography.Body
+                as="span"
+                weight="strong"
+                noMargin
+                className={styles.author}
+              >
+                {message.author}
+              </Typography.Body>
+              <Typography.Caption
+                as="time"
+                tone="subtle"
+                noMargin
+                className={styles.timestamp}
+                dateTime={message.timestamp}
+              >
                 {timestamp}
-              </time>
+              </Typography.Caption>
             </header>
 
             {message.quotedText ? (
-              <blockquote className={styles.quote}>{message.quotedText}</blockquote>
+              <blockquote className={styles.quote}>
+                <Typography.Body as="p" size="small" tone="subtle" noMargin>
+                  {message.quotedText}
+                </Typography.Body>
+              </blockquote>
             ) : null}
 
-            <p className={styles.content}>{renderContent(message.content)}</p>
+            <Typography.Body
+              as="p"
+              tone="muted"
+              noMargin
+              className={styles.content}
+            >
+              {renderContent(message.content)}
+            </Typography.Body>
 
             {message.links?.length ? (
               <div className={styles.attachments} aria-label="Attachments">

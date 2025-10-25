@@ -94,8 +94,7 @@
 }
 
 .hint {
-  font-size: 0.75rem;
-  color: var(--color-text-subtle);
+  white-space: nowrap;
 }
 
 @media (max-width: 768px) {

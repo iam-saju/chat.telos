@@ -37,20 +37,14 @@
 }
 
 .author {
-  font-weight: 600;
   color: var(--color-text-primary);
 }
 
 .timestamp {
   margin-left: auto;
-  font-size: 0.75rem;
-  color: var(--color-text-subtle);
 }
 
 .content {
-  margin: 0;
-  color: var(--color-text-muted);
-  line-height: 1.6;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
@@ -66,9 +60,6 @@
   background: var(--color-accent-soft);
   border-left: 3px solid var(--color-accent-muted);
   border-radius: var(--radius-sm);
-  color: var(--color-text-subtle);
-  font-size: 0.875rem;
-  line-height: 1.5;
   white-space: pre-wrap;
 }
 

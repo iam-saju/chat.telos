@@ -30,10 +30,8 @@
 }
 
 .title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
   margin: 0;
+  color: var(--color-text-primary);
 }
 
 .searchField {
@@ -81,11 +79,11 @@
 }
 
 .itemTitle {
-  font-weight: 600;
-  color: var(--color-text-primary);
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
+  color: var(--color-text-primary);
+  max-width: 100%;
 }
 
 .badge {
@@ -98,8 +96,8 @@
 }
 
 .itemPreview {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
+  width: 100%;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -108,8 +106,7 @@
 }
 
 .meta {
-  font-size: 0.75rem;
-  color: var(--color-text-subtle);
+  display: inline-block;
 }
 
 .closeButton {

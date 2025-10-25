@@ -1,0 +1,102 @@
+.root {
+  color: inherit;
+  margin-top: 0;
+  font-kerning: normal;
+  font-feature-settings: 'liga' 1, 'clig' 1, 'kern' 1;
+}
+
+.noMargin {
+  margin-bottom: 0 !important;
+}
+
+.display,
+.h1,
+.h2,
+.h3 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  color: var(--color-text-primary);
+}
+
+.display {
+  font-size: var(--font-size-display-xl);
+  line-height: var(--line-height-display);
+  letter-spacing: var(--letter-spacing-display);
+  margin: 0 0 var(--type-margin-heading);
+}
+
+.h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-heading);
+  margin: 0 0 var(--type-margin-heading);
+}
+
+.h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-heading);
+  margin: 0 0 calc(var(--type-margin-heading) * 0.85);
+}
+
+.h3 {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-snug);
+  letter-spacing: -0.012em;
+  margin: 0 0 calc(var(--type-margin-heading) * 0.65);
+}
+
+.body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-body);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--type-margin-body);
+}
+
+.bodyLarge {
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-relaxed);
+}
+
+.bodySmall {
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-snug);
+}
+
+.bodyStrong {
+  font-weight: var(--weight-body-strong);
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-caption);
+  color: var(--color-text-subtle);
+  margin: 0 0 var(--type-margin-tight);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: var(--font-size-label);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+  font-weight: var(--weight-body-strong);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--type-margin-tight);
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
+
+.subtle {
+  color: var(--color-text-subtle);
+}
+
+.accent {
+  color: var(--color-accent);
+}

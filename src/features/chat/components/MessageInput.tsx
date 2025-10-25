@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, KeyboardEvent, useCallback, useState } from 'react';
+import Typography from '../../../components/typography';
 import styles from './MessageInput.module.css';
 
 export type MessageInputProps = {
@@ -70,7 +71,14 @@ const MessageInput = ({ onSubmit, placeholder = 'Write a response…' }: Message
           </div>
 
           <div className={styles.actionGroup}>
-            <span className={styles.hint}>Press Enter to send · Shift+Enter for newline</span>
+            <Typography.Caption
+              as="span"
+              tone="subtle"
+              noMargin
+              className={styles.hint}
+            >
+              Press Enter to send · Shift+Enter for newline
+            </Typography.Caption>
             <button type="submit" className={styles.primaryButton} disabled={!value.trim()}>
               Send
             </button>
