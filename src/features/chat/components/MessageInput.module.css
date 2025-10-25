@@ -1,0 +1,124 @@
+.container {
+  position: sticky;
+  bottom: 0;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-divider);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  backdrop-filter: blur(10px);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-divider);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+}
+
+.actionGroup {
+  display: flex;
+  gap: var(--spacing-xs);
+  align-items: center;
+}
+
+.buttonGhost {
+  border: none;
+  background: transparent;
+  padding: var(--spacing-2xs) var(--spacing-xs);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-subtle);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.buttonGhost:focus-visible,
+.buttonGhost:hover {
+  background: var(--color-accent-soft);
+  color: var(--color-text-primary);
+}
+
+.primaryButton {
+  border: none;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-weight: 600;
+  padding: var(--spacing-xs) var(--spacing-lg);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 10px 25px rgba(67, 97, 238, 0.25);
+}
+
+.primaryButton:hover {
+  transform: translateY(-1px);
+}
+
+.primaryButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 3.5rem;
+  resize: vertical;
+  border: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: inherit;
+  color: var(--color-text-primary);
+  background: transparent;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.hint {
+  font-size: 0.75rem;
+  color: var(--color-text-subtle);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+
+  .form {
+    padding: var(--spacing-sm);
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--spacing-xs);
+  }
+
+  .actionGroup {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .primaryButton {
+    width: 100%;
+  }
+}
