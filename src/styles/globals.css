@@ -5,21 +5,126 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --font-sans: "Inter", "system-ui", sans-serif;
-  }
-
   *,
   *::before,
   *::after {
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground antialiased min-h-screen;
-  }
-
   html {
     font-family: var(--font-sans);
+    min-height: 100%;
+    scroll-behavior: smooth;
+    background-color: var(--color-background);
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    transition: background-color var(--motion-duration-medium) var(--motion-ease-standard),
+      color var(--motion-duration-medium) var(--motion-ease-standard);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 4vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 2.8vw, 2.35rem);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+
+  h3 {
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    line-height: 1.25;
+  }
+
+  p,
+  ul,
+  ol {
+    margin: 0;
+  }
+
+  p + p {
+    margin-top: var(--space-sm);
+  }
+
+  a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color var(--motion-duration-short) var(--motion-ease-standard);
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: var(--color-link-hover);
+  }
+
+  ::selection {
+    background-color: rgba(46, 80, 144, 0.2);
+    color: var(--color-link-contrast);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 3px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+
+  hr {
+    border-color: var(--color-divider);
+  }
+
+  .skip-link {
+    position: absolute;
+    top: var(--space-sm);
+    left: 50%;
+    transform: translate(-50%, -200%);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-md);
+    background-color: var(--color-link);
+    color: var(--color-link-contrast);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: transform var(--motion-duration-short) var(--motion-ease-emphasized);
+    z-index: 50;
+  }
+
+  .skip-link:focus {
+    transform: translate(-50%, 0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .skip-link {
+      transition-duration: 1ms;
+    }
   }
 }

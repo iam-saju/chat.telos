@@ -1,21 +1,16 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import ChatPage from "./page";
+import HomePage from "./(routes)/page";
 
-describe("ChatPage", () => {
-  it("renders the initial chat transcript and allows composing a message", async () => {
-    const user = userEvent.setup();
+describe("HomePage", () => {
+  it("renders the scaffold hero and key sections", () => {
+    render(<HomePage />);
 
-    render(<ChatPage />);
+    expect(screen.getByRole("heading", { level: 1, name: /future of chat telos/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 2, name: /opinionated, antikythera-inspired foundations/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 2, name: /fonts and structure/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 2, name: /ready for the chat ui that follows/i })).toBeInTheDocument();
 
-    expect(screen.getByRole("heading", { name: /conversational intelligence/i })).toBeInTheDocument();
-    expect(screen.getByText(/welcome to chat.telos/i)).toBeInTheDocument();
-
-    const composer = screen.getByLabelText(/message/i);
-    await user.type(composer, "Status update on Helios roadmap?");
-    await user.click(screen.getByRole("button", { name: /send message/i }));
-
-    expect(composer).toHaveValue("");
-    expect(screen.getByText(/status update on helios roadmap/i)).toBeInTheDocument();
+    const navLinks = screen.getAllByRole("link", { name: /tokens|foundations|roadmap/i });
+    expect(navLinks).toHaveLength(3);
   });
 });
