@@ -40,14 +40,11 @@
 
 .threadTitle {
   margin: 0;
-  font-size: clamp(1.4rem, 2vw, 1.8rem);
-  font-weight: 700;
-  letter-spacing: -0.015em;
+  color: var(--color-text-primary);
+  max-width: 28ch;
 }
 
 .threadSubtitle {
-  color: var(--color-text-subtle);
-  font-size: 0.9rem;
   margin: var(--spacing-2xs) 0 0;
 }
 

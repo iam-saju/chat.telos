@@ -1,19 +1,28 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   height: 100%;
-  margin: 0;
-  font-family: var(--font-sans);
-  background: var(--color-background);
-  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
 }
 
 body {
+  min-height: 100%;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-normal);
+  background: var(--color-background);
+  color: var(--color-text-primary);
   display: flex;
   justify-content: center;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga' 1, 'clig' 1, 'kern' 1;
 }
 
 #root {
@@ -26,8 +35,43 @@ a {
   text-decoration: none;
 }
 
-button {
-  font-family: inherit;
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  letter-spacing: var(--letter-spacing-heading);
+  margin: 0 0 var(--type-margin-heading);
+  line-height: var(--line-height-tight);
+}
+
+p {
+  margin: 0 0 var(--type-margin-body);
+}
+
+p:last-child,
+li:last-child,
+figure:last-child,
+blockquote:last-child,
+ul:last-child,
+ol:last-child,
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child {
+  margin-bottom: 0;
 }
 
 .sr-only {

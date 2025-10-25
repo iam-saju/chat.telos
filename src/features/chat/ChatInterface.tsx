@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import Typography from '../../components/typography';
 import ChatSidebar from './components/ChatSidebar';
 import MessageInput from './components/MessageInput';
 import MessageThread from './components/MessageThread';
@@ -91,12 +92,18 @@ const ChatInterface = () => {
               Conversations
             </button>
             <div>
-              <h1 id="conversation-title" className={styles.threadTitle}>
+              <Typography.H1 id="conversation-title" className={styles.threadTitle} noMargin>
                 {activeConversation.title}
-              </h1>
-              <p className={styles.threadSubtitle}>
+              </Typography.H1>
+              <Typography.Body
+                as="p"
+                size="small"
+                tone="subtle"
+                noMargin
+                className={styles.threadSubtitle}
+              >
                 {activeConversation.participants.join(' • ')}
-              </p>
+              </Typography.Body>
             </div>
           </header>
 

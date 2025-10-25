@@ -1,0 +1,90 @@
+.shell {
+  padding: var(--spacing-3xl) var(--spacing-2xl) var(--spacing-4xl);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.backButton {
+  align-self: flex-start;
+  border: 1px solid var(--color-divider);
+  background: transparent;
+  color: var(--color-text-muted);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.backButton:hover,
+.backButton:focus-visible {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  outline: none;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.sampleCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.sampleBody {
+  color: var(--color-text-muted);
+}
+
+.sampleBody code {
+  font-family: var(--font-mono);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.tokenRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-sm);
+}
+
+.tokenValue {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text-subtle);
+}
+
+@media (max-width: 768px) {
+  .shell {
+    padding: var(--spacing-2xl) var(--spacing-xl) var(--spacing-3xl);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
